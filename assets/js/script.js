@@ -2,17 +2,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const taskInput = document.getElementById('task-input');
     const addTaskBtn = document.getElementById('add-task-btn');
     const taskList = document.getElementById('task-list');
+    const emptyImage = document.querySelector('.empty-image');
+
+    const toggleEmptyState = () => {
+        emptyImage.style.display = taskList.children.length === 0 ? 'block' : 'none';
+    }
 
     const addTask = (Event) => {
+        Event.preventDefault();
         const taskText = taskInput.value.trim();
         if (taskText) {
             return;
         }
 
         const li = document.createElement('li');
+        li.innerHTML = `
+        <input type="checkbox" class="checkbox">
+        <span>${taskText}</span>`;
         li.textContent = taskText;
         taskList.appendChild(li);
         taskInput.value = '';
+        toggleEmptyState();
 
     };
 
