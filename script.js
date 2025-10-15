@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const taskInput = document.getElementById('task-input');
     const addTaskBtn = document.getElementById('add-task-btn');
+    const todosContainer = document.querySelector('.todos-container');
     const taskList = document.getElementById('task-list');
     const emptyImage = document.querySelector('.empty-image');
-    const todosContainer = document.querySelector('.todos-container');
+
 
     const toggleEmptyState = () => {
         emptyImage.style.display = taskList.children.length === 0 ? 'block' : 'none';
