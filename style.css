@@ -56,5 +56,23 @@ body {
     flex: 1;
     padding: 15px 19px;
     font-size: 1.3rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background: rgba(213, 109, 244, 0.582);
+    color: #dbdbdb
+}
 
+.input-area button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 11px;
+    padding: 10px;
+    border-radius: 51%;
+    color: #fff;
+    font-size: 1.2rem;
+    background-color: rgba(255, 190, 200, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    cursor: pointer;
 }
