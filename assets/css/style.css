@@ -84,6 +84,7 @@ body {
 }
 
 .todos-container {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,19 +136,41 @@ body {
     font-size: 1.2rem;
 }
 
-#task-list li.completed {
-    min-width: 22px;
-    height: 20px;
-    border: 3px solid #5ff142;
-    background: transparent;
-    border-radius: 50%;
-    appearance: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
 #task-list li span {
     flex: 1;
     margin-left: 10px;
     word-wrap: break-word;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 10px;
+    margin-right: auto;
+}
+
+.task-buttons button {
+    background: rgba(201, 102, 247, 0.5);
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    color: #fff;
+    font-size: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-buttons button:hover {
+    transform: scale(1.2);
+}
+
+.task-buttons .edit-btn {
+    background: rgba(255, 0, 0, 0.5);
+}
+
+.task-buttons .delete-btn {
+    background: rgba(0, 0, 0, 0.5);
 }
