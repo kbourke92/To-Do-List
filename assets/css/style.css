@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url();
+    background: url("assets/images/notebook.png");
     background-size: cover;
 }
 
@@ -75,4 +75,21 @@ body {
     background-color: rgba(255, 190, 200, 0.4);
     border: 2px solid rgba(255, 255, 255, 0.18);
     cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.input-area button:hover {
+    transform: scale(1.1);
+    background-color: #ff6f91;
+}
+
+.todos-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#task-list {
+    width: 100%;
+
 }
