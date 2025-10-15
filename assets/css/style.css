@@ -12,8 +12,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url();
     background-size: cover;
+    background-image: url("../images/background.jpg");
 }
 
 .container {
@@ -34,7 +34,6 @@ body {
     justify-content: center;
     flex-direction: column;
     gap: 25px;
-    color: #fff;
     border-radius: 20px;
     box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
     border: 3px solid rgba(255, 255, 255, 0.2);

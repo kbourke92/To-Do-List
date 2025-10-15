@@ -3,15 +3,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const addTaskBtn = document.getElementById('add-task-btn');
     const taskList = document.getElementById('task-list');
     const emptyImage = document.querySelector('.empty-image');
+    const todosContainer = document.querySelector('.todos-container');
 
     const toggleEmptyState = () => {
         emptyImage.style.display = taskList.children.length === 0 ? 'block' : 'none';
+        todosContainer.style.width = taskList.children.length > 0 ? '100%' : '50%';
     }
 
-    const addTask = (Event) => {
-        Event.preventDefault();
+    const addTask = (event) => {
+        event.preventDefault();
         const taskText = taskInput.value.trim();
-        if (taskText) {
+        if (!taskText) {
             return;
         }
 
@@ -25,17 +27,33 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         `;
 
-        li.textContent = taskText;
-        taskList.appendChild(li);
-        taskInput.value = '';
-        toggleEmptyState();
+        const checkbox = li.querySelector('.checkbox');
+        const editBtn = li.querySelector('.edit-btn');
+        editBtn.addEventListener('click', () => {
+            if (checkbox.checked) {
+                taskInput.value = li.querySelector('span').textContent;
 
-    };
+                li.querySelector('.delete-btn').addEventListener('click', () => {
+                    li.remove();
+                    toggleEmptyState();
+                });
+
+                li.textContent = taskText;
+                taskList.appendChild(li);
+                taskInput.value = '';
+                toggleEmptyState();
+
+            };
+
+        });
+
+    }
 
     addTaskBtn.addEventListener('click', addTask);
     taskInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
-            addTask();
+            addTask(e);
         }
+
     });
 });
